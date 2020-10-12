@@ -109,7 +109,7 @@ bintray {
     pkg {
         repo = 'Kclock'
         name = 'Kclock'
-        version("0.0.1")
+        version("0.0.2")
         licenses = ['Apache-2.0']
         vcsUrl = 'https://github.com/ShowMeThe/Kclock.git'
     }
@@ -124,7 +124,7 @@ afterEvaluate {
                 from components.release
                 groupId = 'com.show.kclock'
                 artifactId = 'kclock'
-                version = '0.0.1'
+                version = '0.0.2'
             }
         }
     }
