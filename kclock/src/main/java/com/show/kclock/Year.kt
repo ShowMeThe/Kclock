@@ -4,12 +4,11 @@ import java.io.Serializable
 import kotlin.math.abs
 
 /**
- *  com.show.kclock.scope
+ *  com.show.kclock
  *  2020/10/11
  *  12:26
  *  ShowMeThe
  */
-
 inline val Int.year get() = Year(this)
 
 inline val Year.days
@@ -31,7 +30,7 @@ infix fun Year.daysTo(other: Year) = this.let {
 }
 
 
-class Year(val year: Int): Comparable<Year>, Serializable {
+inline class Year(val year: Int): Comparable<Year>, Serializable {
 
 
     fun isLeap() = (year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0)

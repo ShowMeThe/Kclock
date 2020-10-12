@@ -15,5 +15,12 @@ class MainActivity : AppCompatActivity() {
 
 
 
+        val date1 = "2020-10-12 11:09:48".deFormat()
+
+
+        Log.e("2222222","$date1")
+
+
+
     }
 }

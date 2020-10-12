@@ -4,12 +4,11 @@ import java.io.Serializable
 import kotlin.math.roundToInt
 
 /**
- *  com.show.kclock.scope
+ *  com.show.kclock
  *  2020/10/11
  *  12:26
  *  ShowMeThe
  */
-
 
 inline val Int.months  get() = MonthScope(this)
 

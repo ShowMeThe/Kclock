@@ -3,13 +3,15 @@ package com.show.kclock
 import java.io.Serializable
 
 /**
- *  com.show.kclock.scope
+ *  com.show.kclock
  *  2020/10/11
  *  12:26
  *  ShowMeThe
  */
-
-
+val monthOfYears by lazy { arrayOf(MonthOfYear.January,
+    MonthOfYear.February, MonthOfYear.March, MonthOfYear.April, MonthOfYear.May, MonthOfYear.June,
+    MonthOfYear.July, MonthOfYear.August, MonthOfYear.September, MonthOfYear.October,
+    MonthOfYear.November, MonthOfYear.December) }
 
 enum class MonthOfYear(
     val index: Int,
@@ -42,6 +44,9 @@ enum class MonthOfYear(
 
 
     }
+
+
+    fun displayName() = this.toString()
 
 
     fun daysToNewYear(year: Int) :Int{
