@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
-
+        Log.e("TestUtil"," now time : ${(System.currentTimeMillis() + 1603262409622).dateTime.format(yyyy_MM_dd_HHmmss)}")
 
     }
 }

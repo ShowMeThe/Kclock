@@ -38,7 +38,11 @@ inline val DateTime.milliSecond get() = this.milliSecond()
 
 class DateTime(private val millis: Long) {
 
-    val calendar by lazy { Calendar.getInstance() }
+    val calendar by lazy {
+        Calendar.getInstance().apply {
+            timeInMillis = millis
+        }
+    }
 
     companion object {
 
@@ -149,11 +153,13 @@ class DateTime(private val millis: Long) {
     private fun timeMinus(other: DateTime): ArrayList<Long> {
         val intArray = arrayListOf<Long>()
         val offset = abs(other.millis - millis)
-        if(offset>0){
+        if (offset > 0) {
             val day = offset / MILLIS_DAY
             val hour = offset / MILLIS_HOUR - day * HOUR_IN_DAY
-            val min = offset / MILLIS_MINUTE - hour * MINUTE_IN_HOUR - day * HOUR_IN_DAY * MINUTE_IN_HOUR
-            val sec = offset/ MILLIS_SECOND  - min * SECOND_IN_MINUTE - hour * SECOND_IN_MINUTE * MINUTE_IN_HOUR - day * HOUR_IN_DAY * SECOND_IN_MINUTE * MINUTE_IN_HOUR
+            val min =
+                offset / MILLIS_MINUTE - hour * MINUTE_IN_HOUR - day * HOUR_IN_DAY * MINUTE_IN_HOUR
+            val sec =
+                offset / MILLIS_SECOND - min * SECOND_IN_MINUTE - hour * SECOND_IN_MINUTE * MINUTE_IN_HOUR - day * HOUR_IN_DAY * SECOND_IN_MINUTE * MINUTE_IN_HOUR
             intArray.add(day)
             intArray.add(hour)
             intArray.add(min)
