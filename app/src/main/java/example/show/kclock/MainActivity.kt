@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.show.example.R
 import com.show.kclock.*
 import java.util.*
+import kotlin.time.hours
 
 
 class MainActivity : AppCompatActivity() {
@@ -13,8 +14,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val hour = MonthOfYear.February.days(2020)
 
-        Log.e("TestUtil"," now time : ${(System.currentTimeMillis() + 1603262409622).dateTime.format(yyyy_MM_dd_HHmmss)}")
+
+
+
+
+        Log.e("TestUtil"," now time : ${hour}")
 
     }
 }
