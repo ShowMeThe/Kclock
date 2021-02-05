@@ -18,9 +18,5 @@ class MainActivity : AppCompatActivity() {
 
 
 
-
-
-        Log.e("TestUtil"," now time : ${hour}")
-
     }
 }
