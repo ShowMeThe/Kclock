@@ -147,12 +147,13 @@ class DateTime(private val millis: Long) {
     }
 
 
-    operator fun minus(other: DateTime) = timeMinus(other)
+    operator fun minus(other: DateTime) = timeMinus(other.millis)
 
+    operator fun  minus(other: Long) = timeMinus(other)
 
-    private fun timeMinus(other: DateTime): ArrayList<Long> {
+    private fun timeMinus(other: Long): ArrayList<Long> {
         val intArray = arrayListOf<Long>()
-        val offset = abs(other.millis - millis)
+        val offset = abs(other - millis)
         if (offset > 0) {
             val day = offset / MILLIS_DAY
             val hour = offset / MILLIS_HOUR - day * HOUR_IN_DAY
