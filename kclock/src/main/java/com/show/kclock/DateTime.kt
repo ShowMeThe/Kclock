@@ -111,6 +111,11 @@ class DateTime(private val millis: Long) {
         it[Calendar.MONTH] + 1
     }
 
+    fun dayOfWeek() = calendar.let{
+        it.timeInMillis = millis
+        it[Calendar.DAY_OF_WEEK]
+    }
+
     fun day() = calendar.let {
         it.timeInMillis = millis
         it[Calendar.DAY_OF_MONTH]
